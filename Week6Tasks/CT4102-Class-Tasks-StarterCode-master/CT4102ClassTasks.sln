@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "arrays", "arrays\arrays.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "week6game", "week6game\week6game.vcxproj", "{E7A40666-052E-46F2-8479-407CAF2CA131}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "randomarraytasks", "randomarraytasks\randomarraytasks.vcxproj", "{6BB1D41E-5040-4733-BD26-428979F4098E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{E7A40666-052E-46F2-8479-407CAF2CA131}.Release|x64.Build.0 = Release|x64
 		{E7A40666-052E-46F2-8479-407CAF2CA131}.Release|x86.ActiveCfg = Release|Win32
 		{E7A40666-052E-46F2-8479-407CAF2CA131}.Release|x86.Build.0 = Release|Win32
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Debug|x64.ActiveCfg = Debug|x64
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Debug|x64.Build.0 = Debug|x64
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Debug|x86.ActiveCfg = Debug|Win32
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Debug|x86.Build.0 = Debug|Win32
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Release|x64.ActiveCfg = Release|x64
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Release|x64.Build.0 = Release|x64
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Release|x86.ActiveCfg = Release|Win32
+		{6BB1D41E-5040-4733-BD26-428979F4098E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +58,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4492497E-636F-4562-A2DB-C29DB7AA2A0E} = {D515A920-EE3E-4891-82B2-CD6AB33AE1E8}
 		{E7A40666-052E-46F2-8479-407CAF2CA131} = {D515A920-EE3E-4891-82B2-CD6AB33AE1E8}
+		{6BB1D41E-5040-4733-BD26-428979F4098E} = {D515A920-EE3E-4891-82B2-CD6AB33AE1E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B718C59A-8E22-46D3-ABAC-947048204E71}

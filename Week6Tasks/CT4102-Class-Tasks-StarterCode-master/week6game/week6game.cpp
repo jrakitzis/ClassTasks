@@ -2,19 +2,15 @@
 #include <conio.h>
 using namespace std;
 
-constexpr char kPlayersymbol = '@';
+const char kPlayersymbol = '@';
 int GetIndexFromCoordinates(int x, int y, int width);
 void DrawLevel(char level[], int width, int height, int playerX, int playerY);
 bool UpdatePlayerPosition(char level[], int& playerX, int& playerY, int width, bool& playerHasKey);
 
-
-
 int main()
-
-
 {
-	constexpr int kWidth = 25;
-	constexpr int kHeight = 15;
+	const int kWidth = 25;
+	const int kHeight = 15;
 	char levelArray[]{ '+','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','+',
 					   '|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ','*','|',
 					   '|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' ',' ','|',
@@ -36,17 +32,21 @@ int main()
 	bool gameOver = false;
 	while (!gameOver)
 	{
-		system("cls");
-		DrawLevel(levelArray, kWidth, kHeight, playerX, playerY);
+		// Doing all my game logic
 		gameOver = UpdatePlayerPosition(levelArray, playerX, playerY, kWidth, playerHasKey);
+
+		// Clear the previous frame
+		system("cls");
+
+		// Draw my game graphics
+		DrawLevel(levelArray, kWidth, kHeight, playerX, playerY);
 	}
-	system("cls");
-	DrawLevel(levelArray, kWidth, kHeight, playerX, playerY);
+
 	cout << "You won!" << endl;
 }
 int GetIndexFromCoordinates(int x, int y, int width)
 {
-	return x + y * width;
+	return x + (y * width);
 }
 void DrawLevel(char level[], int width, int height, int playerX, int playerY)
 {
@@ -63,18 +63,20 @@ void DrawLevel(char level[], int width, int height, int playerX, int playerY)
 				int index = GetIndexFromCoordinates(x, y, width);
 				cout << level[index];
 			}
-
-			cout << endl;
 		}
+		cout << endl;
 	}
 }
 bool UpdatePlayerPosition(char level[], int& playerX, int& playerY, int width, bool& playerHasKey)
 {
+	// Take player input
 	char input = _getch();
 
+	// Get the players position
 	int newPlayerX = playerX;
 	int newPlayerY = playerY;
 
+	// Check what they pressed
 	switch (input)
 	{
 	case 'w':
@@ -109,16 +111,16 @@ bool UpdatePlayerPosition(char level[], int& playerX, int& playerY, int width, b
 	if (level[index] == ' ')
 	{
 		playerX = newPlayerX;
-		playerY = newPlayerX;
+		playerY = newPlayerY;
 	}
-	else if (level[index == '*'])
+	else if (level[index] == '*')
 	{
 		playerHasKey = true;
 		level[index] = ' ';
 		playerX = newPlayerX;
 		newPlayerY = newPlayerY;
 	}
-	else if (level[index] == 'd' && playerHasKey)
+	else if (level[index] == 'D' && playerHasKey)
 	{
 		level[index] = ' ';
 		playerHasKey = false;
