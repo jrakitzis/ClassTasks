@@ -10,12 +10,6 @@ typedef std::chrono::high_resolution_clock HiResClock;
 typedef std::chrono::duration<float> TimeDiff;
 
 
-
-
-
-
-
-
 int main()
 {
 

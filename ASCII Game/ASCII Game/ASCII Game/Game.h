@@ -23,7 +23,7 @@ private:
 		PLAY,
 		OPTIONS,
 		SCOREBOARD,
-		GAME_OVER,
+		
 	};
 	// console variables 
 	SMALL_RECT windowSize = { 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1 };
@@ -36,10 +36,10 @@ private:
 	HANDLE rHnd = GetStdHandle(STD_INPUT_HANDLE);
 
 	//Game Variables
-
 	GAME_STATE currentGameState = SPLASH;
 	Background background;
 	Player player;
+	Explosion explosion;
 };
 
 
