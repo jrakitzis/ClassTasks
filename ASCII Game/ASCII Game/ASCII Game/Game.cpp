@@ -124,16 +124,19 @@ void Game::Update(float deltaTime)
 				player.isAccelerating = false;
 
 				//clamp our acceleration
-				player.Acceleration = ClampFLoat(player.Acceleration, 0.0f, 1.5f);
+				player.Acceleration = ClampFLoat(player.Acceleration, -0.5f, 1.5f);
 
-				if (player.Acceleration >= 1.0f)
-				{
-					player.yPos--;
-				}
-				else if (player.Acceleration < 0.5f)
-				{
-					player.yPos++;
-				}
+				player.yPosF -= player.Acceleration;
+				player.yPos = (int)player.yPosF;
+
+				//if (player.Acceleration >= 1.0f)
+				//{
+				//	player.yPos--;
+				//}
+				//else if (player.Acceleration < 0.5f)
+				//{
+				//	player.yPos++;
+				//}
 
 				//clamp the input
 				player.xPos = ClampInt(player.xPos, 0, (SCREEN_WIDTH - player.WIDTH));
@@ -205,6 +208,7 @@ void Game::Update(float deltaTime)
 			WriteTextToBuffer(consoleBuffer, "SCORE: ", 1, 0);
 			WriteTextToBuffer(consoleBuffer, "TIME: ", 1, 1);
 			WriteTextToBuffer(consoleBuffer, "FUEL: " + std::to_string(player.fuel), 1, 2);
+			WriteTextToBuffer(consoleBuffer, "Thrust: " + std::to_string(player.Acceleration), 1, 3);
 
 			break;
 		}

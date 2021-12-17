@@ -1,6 +1,7 @@
 // Includes
 #include <Windows.h>
 #include<chrono>
+#include<string>
 #include "GameObjects.h"
 #include"Game.h"
 

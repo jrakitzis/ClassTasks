@@ -13,8 +13,12 @@ struct Player
 	{
 		xPos = SCREEN_WIDTH / 2;
 		yPos = 5;
+
+		xPosF = xPos;
+		yPosF = yPos;
+
 		isAccelerating = false;
-		Acceleration = 0.0f;
+		Acceleration = -1.0f;
 		hasLanded = false;
 		hasCrashed = false;
 	}
@@ -39,8 +43,12 @@ struct Player
 	// variables
 	int xPos = SCREEN_WIDTH / 2;
 	int yPos = 5;
+
+	float xPosF = xPos;
+	float yPosF = yPos;
+
 	bool isAccelerating = false;
-	float Acceleration = 0.0f;
+	float Acceleration = -1.0f;
 	bool hasLanded = false;
 	bool hasCrashed = false;
 	float fuel = 100.0f;
